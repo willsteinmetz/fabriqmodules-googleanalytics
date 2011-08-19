@@ -25,7 +25,7 @@ class googleanalytics_install {
 		}
 		
 		if (isset($_POST['submit'])) {
-			$configs[$configs->configs['apikey']]->val = $_POST['%CONFIG'];
+			$configs[$configs->configs['apikey']]->val = $_POST['apikey'];
 			$configs->update($configs->configs['apikey']);
 			Fabriq::render('none');
 			echo json_encode(array('success' => true));

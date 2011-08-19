@@ -12,7 +12,9 @@ class googleanalytics_module extends FabriqModule {
 		parent::__construct();
 	}
 	
-	public function index() {
-		
+	public function js() {
+		$apikey = new ModuleConfigs();
+		$apikey->getConfig('googleanalytics', 'apikey');
+		FabriqModules::set_var('googleanalytics', 'apikey', $apikey->val);
 	}
 }
